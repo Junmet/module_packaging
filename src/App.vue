@@ -1,28 +1,33 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+  <tabs :currentIndex="currentIndex" @changeIndex="changeIndexHandler">
+    <tab label="tab1" index="1">
+       <div>我是内容1</div>
+    </tab>
+    <tab label="tab2" index="2">
+       <div>我是内容2</div>
+    </tab>
+    <tab label="tab3" index="3">
+       <div>我是内容3</div>
+    </tab>
+  </tabs>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
 export default {
   name: 'App',
-  components: {
-    HelloWorld
+  data () {
+    return {
+      currentIndex: '1'
+    }
+  },
+  methods: {
+    changeIndexHandler (index) {
+      this.currentIndex = index
+    }
   }
 }
 </script>
 
-<style lang="less">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<style scoped>
+
 </style>

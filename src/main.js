@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import App from './App.vue'
-
+import Tabs from './components/tabs'
+Vue.use(Tabs)
 Vue.config.productionTip = false
 
 new Vue({
